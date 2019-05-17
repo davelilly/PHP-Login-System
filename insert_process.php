@@ -17,5 +17,12 @@ $sql = "INSERT INTO employee VALUES (''," .
                                      "'".$department."'," . 
                                      "'".$position."'," . 
                                      "'".$salary."')";
-echo($sql);
+
+//This will RUN the QUERRY that we just tested inside of mySQL in phpMyAdmin                                   
+mysql_query($sql);                                   
+mysql_close($connection);
+
+echo($first . " " . $last . " was added to the db!!");
+echo("View list <a href='index.php'>here</a>");
+//echo($sql);
 ?>
