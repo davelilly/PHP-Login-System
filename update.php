@@ -21,7 +21,8 @@ echo '<div style="color:red">' . $row["salary"].'<div>';
   <body>
 		<!--post passes info as an array instead of a querry string in teh URL-->
 	<form action="update_process.php" method="post" class="uk-form-stacked js-login">
-		<h2>Add employee</h2>
+		<input type="hidden" name="id" value="<?php print($id); ?>"/><!--need this so we it knows which id to update-->
+		<h2>Update employee</h2>
 		<label class="uk-form-label" for="first">first</label>
 			<input class="uk-input" id="first" type="text" name="first" required='required' placeholder="first" value="<?php print($row["firstName"]); ?>">
 		<label class="uk-form-label" for="last">last</label>
@@ -35,10 +36,21 @@ echo '<div style="color:red">' . $row["salary"].'<div>';
 				<option value="4" <?php if($row["department"]==4){print("selected");} ?> >Management</option>
 			</select>
 		<label class="uk-form-label" for="position">position</label>
-			<input class="uk-input" id="position" type="text" name="position" required='required' placeholder="position" value="<?php print($row["position"]); ?>">
+			<input class="uk-input" id="position" type="text" name="position" placeholder="position" value="<?php print($row["position"]); ?>">
 		<label class="uk-form-label" for="salary">salary</label>
-			<input class="uk-input" id="salary" type="text" name="salary" required='required' placeholder="salary" value="<?php print($row["salary"]); ?>">
+			<input class="uk-input" id="salary" type="text" name="salary" placeholder="salary" value="<?php print($row["salary"]); ?>">
 		<button class="uk-button uk-button-default" type="submit" value="Save Info">Save</button>
 	</form>
-  </body>
+	</body>
+	
+	
 </html>
+
+<?php
+
+print('
+<button> <a href="Employee-List.php">View list</a></button></br>
+<button> <a href="Add-Employee-Form.php">Add Employee</a></button></br>
+');
+
+?>

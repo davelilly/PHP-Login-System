@@ -11,13 +11,14 @@ $salary = $_REQUEST['salary'];
 //test it:
 //echo($last . $first.$department.$position.$salary);
 
+//This will spit out a query of INSERT INTO employee VALUES ('','$last','$first','$department','$position','$salary');
 //This MUST be in the same ORDER that your table columns are in!!!
 $sql = "INSERT INTO employee VALUES (''," .
                                      "'".$last."'," .
                                      "'".$first."'," . 
                                      "'".$department."'," . 
                                      "'".$position."'," . 
-                                     "'".$salary."')";
+                                     "'".$salary."');";
 
 
 //This will RUN the QUERRY that we just tested inside of mySQL in phpMyAdmin                                   

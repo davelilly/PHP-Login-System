@@ -32,6 +32,13 @@ while($row = mysql_fetch_array($result)){
 }
 
 echo "</table>";
+
+
+print('
+<button> <a href="Add-Employee-Form.php">Add Employee</a></button></br>
+');
+
+
 ?>
 
 

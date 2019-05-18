@@ -23,12 +23,19 @@
 				<option value="4">Management</option>
 			</select>
 		<label class="uk-form-label" for="position">position</label>
-			<input class="uk-input" id="position" type="text" name="position" required='required' placeholder="position">
+			<input class="uk-input" id="position" type="text" name="position" placeholder="position">
 		<label class="uk-form-label" for="salary">salary</label>
-			<input class="uk-input" id="salary" type="text" name="salary" required='required' placeholder="salary">
+			<input class="uk-input" id="salary" type="text" name="salary" placeholder="salary">
 		<button class="uk-button uk-button-default" type="submit" value="Save Info">Submit</button>
 	</form>
   </body>
 </html>
+<?php
 
+print('
+<button> <a href="Employee-List.php">View list</a></button></br>
+<button> <a href="Add-Employee-Form.php">Add Employee</a></button></br>
+');
+
+?>
 
