@@ -1,5 +1,5 @@
 
-
+<div style="font-size: 6px;">
 <?php
     //database connect script
     $db_name = "employees";
@@ -8,9 +8,9 @@
     $host = "localhost";
 
     $connection = mysql_connect($host, $un, $pw) or die (mysql_error());
-    echo("connected to db, Bitch!");
-
+    echo("connected to database in mySQL!");
+    echo(" and ");
     mysql_select_db($db_name) or die (mysql_error());
-    echo("connected to table, Homie!");
-
+    echo("connected to specific table in database");
 ?>
+</div>

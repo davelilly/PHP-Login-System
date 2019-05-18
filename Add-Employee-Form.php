@@ -33,11 +33,11 @@
 			        <label class="uk-form-label" for="department">department</label>
 			        <div class="uk-form-controls">
 			            <select class="uk-input" id="department" type="text" name="department" required='required' placeholder="department">
-                            <!--Theh value is what gets passed to the server, so we want to use the ID-->
+                            <!--The value is what gets passed to the server, so we want to use the ID-->
                             <option value="1">Accounting</option>
                             <option value="2">Sales</option>
-                            <option value="">Information Technology</option>
-                            <option value="">Management</option>
+                            <option value="3">Information Technology</option>
+                            <option value="4">Management</option>
                         </select>
 			        </div>
                 </div>
@@ -57,7 +57,7 @@
 			    </div>
 
 			    <div class="uk-margin">
-			        <button class="uk-button uk-button-default" type="submit" value="Save Info">Login</button>
+			        <button class="uk-button uk-button-default" type="submit" value="Save Info">Submit</button>
 			    </div>
 
 			</form>

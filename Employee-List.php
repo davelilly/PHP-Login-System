@@ -20,8 +20,14 @@ echo("<table>");
 while($row = mysql_fetch_array($result)){
     echo("<tr>");
     echo "<td>" . $row["empId"] . "</td>" . 
+        "<td>" . $row["department"] . "</td>" . 
+        "<td>" . $row["lastName"] . "</td>" . 
         "<td>" . $row["firstName"] . "</td>" . 
-        "<td>" . $row["lastName"] . "</td>";
+        "<td>" . $row["salary"] . "</td>" . 
+        "<td>" . $row["position"] . "</td>" .
+        "<td> <a href='delete.php?id=" . $row['empId'] . "'>delete</a> </td>" .
+        "<td> <a href='update?id=" . $row['empId'] . "'>update</a> </td>";
+
     echo"</tr>";
 }
 
