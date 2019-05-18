@@ -19,11 +19,12 @@ $sql = "INSERT INTO employee VALUES (''," .
                                      "'".$position."'," . 
                                      "'".$salary."')";
 
+
 //This will RUN the QUERRY that we just tested inside of mySQL in phpMyAdmin                                   
 mysql_query($sql);                                   
 mysql_close($connection);
 
 echo($first . " " . $last . " was added to the db!!");
-echo("View list <a href='index.php'>here</a>");
+echo("View list <a href='Employee-List.php'>here</a>");
 //echo($sql);
 ?>

@@ -26,7 +26,7 @@ while($row = mysql_fetch_array($result)){
         "<td>" . $row["salary"] . "</td>" . 
         "<td>" . $row["position"] . "</td>" .
         "<td> <a href='delete.php?id=" . $row['empId'] . "'>delete</a> </td>" .
-        "<td> <a href='update?id=" . $row['empId'] . "'>update</a> </td>";
+        "<td> <a href='update.php?id=" . $row['empId'] . "'>update</a> </td>";
 
     echo"</tr>";
 }
