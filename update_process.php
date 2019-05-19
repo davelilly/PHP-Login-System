@@ -21,7 +21,7 @@ $sql = "UPDATE employee SET " .
 
 //echo($sql);
 
-mysql_query($sql) or die(mysql_error());
+mysqli_query($connection,$sql) or die(mysqli_connect_error());
 
 print("Success! User " . $id . " is updated.");
 

@@ -5,8 +5,8 @@ $id = $_REQUEST['id'];
 //Or written another way--> mysql_fetch_array(mysql_query("SELECT * FROM employee WHERE empId='" . $id . "'") or die(mysql_error()));
 $sql = "SELECT * FROM employee WHERE empId='" . $id . "'";
 //echo $sql;
-$result = mysql_query($sql) or die(mysql_error());
-$row = mysql_fetch_array($result) or die(mysql_error());
+$result = mysqli_query($connection,$sql) or die(mysqli_connect_error());
+$row = mysqli_fetch_array($result) or die(mysqli_connect_error());
 //Then you are picking which column you want to get data from
 echo '<div style="color:red">' . $row["salary"].'<div>';
 ?>

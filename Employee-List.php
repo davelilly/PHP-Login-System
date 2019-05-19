@@ -5,8 +5,9 @@ require_once("db_connect.php");
 
 //this is an "informal join"
 //the list of columns do not need to be in any particular order
-$sql = "SELECT * FROM employee";
-$result = mysqli_query($connection, $sql) or die("Bad query: $sql");
+//$sql = "SELECT * FROM employee";
+$sql = "SELECT empId,firstName,departmentName,position,lastName,salary FROM employee,departments WHERE department = deptId";
+$result = mysqli_query($connection, $sql) or die(mysqli_connect_error());
 
 echo("<table>");
 //You can get the first item
