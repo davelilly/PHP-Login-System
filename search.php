@@ -1,41 +1,43 @@
 <?php
-// require_once('db_connect.php');
+require_once('db_connect.php');
+$output = ''; 
+//collect the post of hte script
+ if(isset($_POST['SearchBtnVal'])){ //if search btn value is clicked(or "posted")
+    $searchq = $_POST['searchval']; //this is what user entered in field named searchval
+    //$searchq = preg_replace_callback("#[^0-9a-z]#i","letters and numbers only",$searchq); //this allows only letters and numbers   
+    $sql = "SELECT * FROM employee WHERE firstName LIKE '%$searchq%' OR lastName LIKE '%$searchq%' ";
+    $result = mysqli_query($connection,$sql) or die('mysql_error()');
+    $count = mysqli_num_rows($result);
 
-// $output='';
-// if(isset($_POST['search'])){
-//     $searchkey= $_POST['search'];
-//     $searchkey=preg_replace("#[^0-9a-z]#i", "", $searchkey);
-// 		$sql = "SELECT * FROM employee WHERE firstName LIKE '%$searchkey%' OR lastName LIKE '%$searchkey%'";
-//     $query = mysqli_query($connection,$sql) or die(mysql_error());
-//     $count = mysqli_num_rows($query);
+    if($count == 0){
+        $output="There was no search result!";
+    }else{
+        while($row=mysqli_fetch_assoc($result)){ //OR mysqli_fetch_assoc or _array
+            $fname=$row['firstName'];
+            $lname=$row['lastName'];
+            $id = $row['id'];
+            $output .='<div>'.$fname.' '.$lname.'</div>';
 
-//     if($count == 0){
-//         $output="There was no search result!";
-//     }
-//     else{
-//         while($row=mysqli_fetch_array($query)){
-//             $fname=$row['firstName'];
-//             $lname=$row['lastName'];
-//             $output .='<div>'.$fname.''.$lname.'</div>';
-//             echo "$output";
-//         }
-//     }
-// }
-?>
+
+        }
+    }
+}
+?> 
 
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Search</title>
+    <title></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.24/css/uikit.min.css" />
   </head>
 
   <body>
+  <h1>Searchx</h1>
 		<!--post passes info as an array instead of a querry string in teh URL-->
-		<form action="search_process.php" method="post" class="uk-form-stacked js-login">
-			<input class="uk-input" id="first" type="text" name="search" required='required' placeholder="Your search term">
-			<button class="uk-button uk-button-default" type="submit" value="Search">Submit</button>
+		<form action="search.php" method="post" class="uk-form-stacked js-login">
+			<input class="uk-input" id="first" type="text" name="searchval" required='required' placeholder="Your search term">
+			<button class="uk-button uk-button-default" type="submit" value="SearchBtnVal">Submit</button>
 	</form>
   </body>
 </html>
@@ -43,8 +45,6 @@
 <?php
 
 print("$output");
-
-
 
 ?>
 
