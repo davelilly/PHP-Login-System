@@ -26,7 +26,7 @@ $output = '';
     $searchq = $_POST['searchval']; //this is what user entered in field named searchval
     //$searchq = preg_replace_callback("#[^0-9a-z]#i","letters and numbers only",$searchq); //this allows only letters and numbers   
     $sql = "SELECT * FROM employee WHERE firstName LIKE '%$searchq%' OR lastName LIKE '%$searchq%' ";
-    $result = mysqli_query($connection,$sql) or die(mysql_error());
+    $result = mysqli_query($connection,$sql) or die("dead");
     $count = mysqli_num_rows($result);
 
     if($count == 0){

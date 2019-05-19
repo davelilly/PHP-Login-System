@@ -5,9 +5,8 @@ require_once("db_connect.php");
 
 //this is an "informal join"
 //the list of columns do not need to be in any particular order
-$sql = "SELECT empId,firstName,departmentName,position,lastName,salary FROM employee,departments WHERE department = deptId";
-$result = mysql_query($sql) or die(mysql_error());
-
+$sql = "SELECT * FROM employee";
+$result = mysqli_query($connection, $sql) or die("Bad query: $sql");
 
 echo("<table>");
 //You can get the first item
@@ -15,7 +14,7 @@ echo("<table>");
 //echo $row["empId"] . $row["firstName"];
 //OR
 //get all the items
-//while($row = mysql_fetch_array($result)){
+//while($row = mysqli_fetch_array($result)){
 //    echo $row["empId"] . $row["firstName"];
 //};
 //OR
@@ -29,21 +28,21 @@ echo"<tr>
 <th>position</th>
 <th>sal</th>
 </tr>";
-while($row = mysql_fetch_array($result)){
+while($row = mysqli_fetch_assoc($result)){
     echo("<tr>");
-    echo("<td>" . $row["empId"] . "</td>" . 
+    echo "<td>" . $row["empId"] . "</td>" . 
         "<td>" . $row["lastName"] . "</td>" . 
         "<td>" . $row["firstName"] . "</td>" . 
         "<td>" . $row["departmentName"] . "</td>" . 
         "<td>" . $row["position"] . "</td>" .
         "<td>" . $row["salary"] . "</td>" . 
         "<td> <a href='delete.php?id=" . $row['empId'] . "'>delete</a> </td>" .
-        "<td> <a href='update.php?id=" . $row['empId'] . "'>update</a> </td>");
+        "<td> <a href='update.php?id=" . $row['empId'] . "'>update</a> </td>";
 
-    echo("</tr>");
+    echo"</tr>";
 }
 
-echo("</table>");
+echo "</table>";
 
 
 print('

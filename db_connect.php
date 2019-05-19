@@ -8,10 +8,11 @@
     $host = "localhost";
     
     //if you wanted to come could simply use the actual values(sans "") in here instead of variables
-    $connection = mysql_connect($host, $un, $pw) or die (mysql_error());
+    $connection = @mysqli_connect($host, $un, $pw, $db_name) OR die("Could not connect to MySQL: " . mysqli_connect_error());
+
     echo "connected to database in mySQL!"; //()Parenthesis are OPTIONAL!
     //echo(" and ");
-    mysql_select_db("employees") or die (mysql_error());
-    echo("connected to specific table in database");
+    //mysqli_select_db($db_name) or die (mysqli_error());
+    //echo "connected to specific table in database";
 ?>
 </div>
