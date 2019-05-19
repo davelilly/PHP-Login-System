@@ -31,19 +31,19 @@ echo"<tr>
 </tr>";
 while($row = mysql_fetch_array($result)){
     echo("<tr>");
-    echo "<td>" . $row["empId"] . "</td>" . 
+    echo("<td>" . $row["empId"] . "</td>" . 
         "<td>" . $row["lastName"] . "</td>" . 
         "<td>" . $row["firstName"] . "</td>" . 
         "<td>" . $row["departmentName"] . "</td>" . 
         "<td>" . $row["position"] . "</td>" .
         "<td>" . $row["salary"] . "</td>" . 
         "<td> <a href='delete.php?id=" . $row['empId'] . "'>delete</a> </td>" .
-        "<td> <a href='update.php?id=" . $row['empId'] . "'>update</a> </td>";
+        "<td> <a href='update.php?id=" . $row['empId'] . "'>update</a> </td>");
 
-    echo"</tr>";
+    echo("</tr>");
 }
 
-echo "</table>";
+echo("</table>");
 
 
 print('

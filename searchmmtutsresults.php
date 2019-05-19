@@ -10,10 +10,10 @@ require_once("db_connect.php");
         //echo $row['firstName'] . " " . $row['lastName'];
         if($count > 0){
             while($row = mysqli_fetch_assoc($result)){ //OR mysqli_fetch_assoc or _array
-                echo $row['firstName'] . $row['lastName'];
+                echo($row['firstName'] . $row['lastName']);
             }
         }else{
-            echo "Nope";
+            echo("Nope");
         }
     }
 

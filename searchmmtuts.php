@@ -11,7 +11,7 @@
     <h1>Front Page12</h1>
     <h2>All Articles</h2>
     
-    <form action="searchdansresults.php" method="post" class="uk-form-stacked js-login">
+    <form action="searchmmtutsresults.php" method="post" class="uk-form-stacked js-login">
         <input class="uk-input" id="first" type="text" name="searchval" required='required' placeholder="Your search term">
         <button class="uk-button uk-button-default" type="submit" value="Search">Search</button>
 	</form>
@@ -26,7 +26,7 @@
             //$row = mysql_fetch_assoc($result); //OR mysql_fetch_array
             //echo $row['firstName'] . " " . $row['lastName'];
                 while($row = mysqli_fetch_assoc($result)){ //OR mysqli_fetch_assoc or _array
-                    echo $row['firstName'] . $row['lastName'];
+                    echo($row['firstName'] . $row['lastName']);
                 
             }
         ?>
